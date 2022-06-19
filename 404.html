@@ -2,16 +2,18 @@
 
 </head><body>
 
-<div>TEST</div>
+<div>This URL does not exist. Did you come here to archive an URL? If so, then check the browser console.</div>
 <script> 
     var url = "https://api.github.com/repos/regstuff/git-archiver/issues";
-    var title = "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token"
-    var token = 'token ' + 'ghp_'
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url);
 
     console.log('window.location.host', window.location.host)
-    console.log('window.location.pathname', window.location.pathname.split('/')[1])
+    var token = 'token ' + window.location.pathname.split('/')[2]
+    console.log('token', token)
+    var title = window.location.pathname.split('?q=')[1]
+    console.log('title', title)
+    
     
     xhr.setRequestHeader("Accept", "application/vnd.github.v3+json");
     xhr.setRequestHeader("Authorization", token);
