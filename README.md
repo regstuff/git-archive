@@ -1,4 +1,4 @@
-# archive
+# git-archiver
 Save offline archives of webpages with Github Actions & [Monolith](https://github.com/Y2Z/monolith).
 
 ## How-To
