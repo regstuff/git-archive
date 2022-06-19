@@ -39,3 +39,9 @@ jobs:
       
       - name: Push Changes Back To Repo
         uses: GuillaumeFalourd/git-commit-push@v1.3
+        
+      - name: Close Issue
+        uses: peter-evans/close-issue@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          comment: Archived. Closing issue
