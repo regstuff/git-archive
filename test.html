@@ -1,0 +1,36 @@
+<html><head>
+
+</head><body>
+
+<div>TEST</div>
+<script> 
+    var url = "https://api.github.com/repos/regstuff/git-archiver/issues";
+    var title = "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token"
+    var token = 'token ' + 'ghp_'
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+
+    console.log('window.location.host', window.location.host)
+    console.log('window.location.pathname', window.location.pathname.split('/')[1])
+    
+    xhr.setRequestHeader("Accept", "application/vnd.github.v3+json");
+    xhr.setRequestHeader("Authorization", token);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+    xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4) {
+          console.log(xhr.status);
+          console.log(xhr.responseText);
+       }};
+    
+    var data = `{"title":"${title}"}`;
+    console.log('title',title)
+    console.log('data',data)
+    //xhr.send(data);
+    
+
+</script>
+
+
+
+</body></html>
