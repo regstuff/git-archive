@@ -20,10 +20,18 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
       
+      - name: Setup Python Version
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.8 # Install the python version needed
+      
       - name: Run specific commands # Another step name
         run: |
-          chmod +x monolith && ./monolith -aefv https://isha.sadhguru.org/in/en/wisdom -o html/wisdom.html
-          echo "Monolith ran"
+          ls -lha
+          echo "This is a shell command"
+          
+      - name: Execute Python script # Run the app.py
+        run: python main.py
       
       - name: Push Changes Back To Repo
         uses: GuillaumeFalourd/git-commit-push@v1.3
