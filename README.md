@@ -21,5 +21,13 @@ OR
 
 3. Most browsers allow you to [add a custom search engine](https://support.google.com/chrome/answer/95426?hl=en), which can be triggered by a short code in the focus bar. You can set this up as a shortcut to the archiver, by setting the search engine url to https://YOUR_USERNAME.github.io/git-archiver/YOUR_GITHUB_ACCESS_TOKEN/?archiveurl=%s (in Chrome/Chromium browsers. Similar things are possible in Firefox). Again, make sure no one sees your access token.
 
+4. How much space does Github give you? [Github says](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#repository-size-limits): "We recommend repositories remain small, ideally less than 1 GB, and less than 5 GB is strongly recommended."
+
+   Assuming each webpage is 1-1.5 MB on average, that means 600-1000 webpages for 1 GB, or 3000-5000 pages for 5 GB.
+
+   A few more interesting details over at [Stackoverflow](https://stackoverflow.com/a/59479166/3016570).
+   
+   To save on space, check out Monolith's [many flags](https://github.com/Y2Z/monolith#options). Low-hanging fruit includes -i, -c & -j (exclude images, CSS & Javascript). Edit the -aevf part in main.py accordingly.
+
 ## To-Do
 1. Add fulltext search functionality for all archived pages.
