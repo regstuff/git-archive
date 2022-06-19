@@ -9,10 +9,10 @@
     xhr.open("POST", url);
 
     console.log('window.location.host', window.location.host)
-    console.log('window.location.pathname', window.location.pathname)
+    console.log('window.location.href', window.location.href)
     var token = 'token ' + window.location.pathname.split('/')[2]
     console.log('token', token)
-    var title = window.Location.href.split('?archiveurl=')[1]
+    var title = window.location.href.split('?archiveurl=')[1]
     console.log('title', title)
     
     
