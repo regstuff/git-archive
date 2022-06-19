@@ -12,7 +12,7 @@
     console.log('window.location.pathname', window.location.pathname)
     var token = 'token ' + window.location.pathname.split('/')[2]
     console.log('token', token)
-    var title = window.location.pathname.split('?archiveurl=')[1]
+    var title = window.Location.href.split('?archiveurl=')[1]
     console.log('title', title)
     
     
