@@ -5,6 +5,8 @@ name: Archive Webpage
 
 # Controls when the workflow will run
 on:
+  issues:
+      types: [opened]
 # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
@@ -30,8 +32,10 @@ jobs:
           ls -lha
           echo "This is a shell command"
           
-      - name: Execute Python script # Run the app.py
-        run: python main.py
+      - name: Execute Python script # Run with open issue title (the url to archive)
+        run: python main.py $TITLE
+        env: 
+          TITLE: ${{ github.event.issue.title }}
       
       - name: Push Changes Back To Repo
         uses: GuillaumeFalourd/git-commit-push@v1.3
