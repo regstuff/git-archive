@@ -30,7 +30,7 @@
     
     var data = `{"title":"${title}"}`;
     console.log('data',data)
-    xhr.send(data);
+    if (title != '') {xhr.send(data);}
     
 
 </script>
