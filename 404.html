@@ -9,9 +9,10 @@
     xhr.open("POST", url);
 
     console.log('window.location.host', window.location.host)
+    console.log('window.location.pathname', window.location.pathname)
     var token = 'token ' + window.location.pathname.split('/')[2]
     console.log('token', token)
-    var title = window.location.pathname.split('?q=')[1]
+    var title = window.location.pathname.split('?archiveurl=')[1]
     console.log('title', title)
     
     
@@ -26,7 +27,6 @@
        }};
     
     var data = `{"title":"${title}"}`;
-    console.log('title',title)
     console.log('data',data)
     //xhr.send(data);
     
