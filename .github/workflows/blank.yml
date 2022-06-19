@@ -22,7 +22,7 @@ jobs:
       
       - name: Run specific commands # Another step name
         run: |
-          chomd +x monolith && ./monolith -aevf https://isha.sadhguru.org/in/en/wisdom -o html/wisdom.html
+          chmod +x monolith && ./monolith -aefv https://isha.sadhguru.org/in/en/wisdom -o wisdom.html
           echo "Monolith ran"
       
       - name: Push Changes Back To Repo
