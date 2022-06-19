@@ -13,7 +13,7 @@
     console.log('window.location.href', window.location.href)
     var token = 'token ' + window.location.pathname.split('/')[2]
     console.log('token', token)
-    var title = window.location.href.split('?archiveurl=')[1]
+    var title = decodeURIComponent(window.location.href.split('?archiveurl=')[1])
     console.log('title', title)
     
     
