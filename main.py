@@ -14,6 +14,7 @@ print('Owner:',owner)
 with open('config.json') as json_file: config = json.load(json_file)
 default_flags = config['default_flags']
 print('Monolith Default Flags:',default_flags)
+print('Config allowed user:', config['allowed_users'])
 allowed_users = config['allowed_users'].append(owner)
 print('Allowed Users:',allowed_users)
 
