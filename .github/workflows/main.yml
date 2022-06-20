@@ -33,9 +33,11 @@ jobs:
           echo "This is a shell command"
           
       - name: Execute Python script # Run with open issue title (the url to archive)
-        run: python main.py $TITLE
+        run: python main.py $TITLE $AUTHOR $OWNER
         env: 
           TITLE: ${{ github.event.issue.title }}
+          AUTHOR: ${{ github.event.issue.author }}
+          OWNER: ${{ github.repository_owner }}
       
       - name: Push Changes Back To Repo
         uses: GuillaumeFalourd/git-commit-push@v1.3
