@@ -28,7 +28,9 @@
        if (xhr.readyState === 4) {
           console.log(xhr.status);
           console.log(xhr.responseText);
-          document.getElementById('responseText').innerHTML = `<h2>${xhr.status}</h2><p>${xhr.responseText}</p>`
+          if (xhr.status == 201) {document.getElementById('responseText').innerHTML = `<h2>Archiving Success!</h2><p>${xhr.responseText}</p>`}
+          else {if (xhr.status == 201) {document.getElementById('responseText').innerHTML = `<h2>Failure!!! Status ${xhr.status}</h2><p>${xhr.responseText}</p>`}}
+          
        }};
     
     var data = `{"title":"${title}"}`;
