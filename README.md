@@ -64,3 +64,5 @@ To save on space, check out Monolith's [many flags](https://github.com/Y2Z/monol
 3. Use issue labels to categorize archived page
 
 4. Config option to auto-archive to wayback machine
+
+5. Detect the result of actual archiving workflow and pass it to the 404 page & issue
