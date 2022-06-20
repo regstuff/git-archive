@@ -10,7 +10,8 @@ print('Commenter:',commenter)
 owner = sys.argv[3]
 print('Owner:',owner)
 
-with open('config.json') as json_file: default_flags = json.load(json_file)
+with open('config.json') as json_file: config = json.load(json_file)
+default_flags = config['default_flags']
 print('Monolith Default Flags:',default_flags)
 
 if url[-5:] == '.html': fname = 'html/' + url.replace('/', '_-_') + '.html'
