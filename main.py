@@ -14,7 +14,7 @@ print('Owner:',owner)
 with open('config.json') as json_file: config = json.load(json_file)
 default_flags = config['default_flags']
 print('Monolith Default Flags:',default_flags)
-allowed_users = eval(config['allowed_users']).append(owner)
+allowed_users = config['allowed_users'].append(owner)
 print('Allowed Users:',allowed_users)
 
 if commenter in allowed_users and ' ' not in url and (url[:7] == 'http://' or url[:8] == 'https://'):
