@@ -16,7 +16,7 @@ print('Monolith Default Flags:',default_flags)
 if url[-5:] == '.html': fname = 'html/' + url.replace('/', '_-_') + '.html'
 else: fname = 'html/' + url.replace('/', '_-_')
 
-if '::' in fullurl and fullurl.split('::')[1] != '': monolith_command = f'chmod +x monolith && ./monolith {fullurl.split('::')[1]} {url} -o {fname}'
+if '::' in fullurl and fullurl.split('::')[1] != '': monolith_command = f'chmod +x monolith && ./monolith {fullurl.split("::")[1]} {url} -o {fname}'
 elif '::' in fullurl: monolith_command = f'chmod +x monolith && ./monolith {url} -o {fname}'
 else: monolith_command = f'chmod +x monolith && ./monolith -ifave {url} -o {fname}'
   
