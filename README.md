@@ -38,7 +38,7 @@ Most browsers allow you to [add a custom search engine](https://support.google.c
 
    Eg 2. https://cnn.com:: - Monolith runs without any flags. Audio & video will be downloaded as well. Watch your repo size!
 
-**Collaborative Archiving:** By default, only issues created by the repo owner trigger the archiving workflow. To add additional users, add to the allowed_users list in config.json
+**Collaborative Archiving:** By default, only issues created by the repo owner trigger the archiving workflow. To add additional users, add to the allowed_users list in config.json. Eg. ["someone", "someone-else"]
 
 ## Security
 1. If you're using the browser method, make sure no one sees your access token. To limit the damage in such situations, make sure you restrict the personal access token's scopes to repo (preferably public repo), when creating the token.
@@ -62,3 +62,5 @@ To save on space, check out Monolith's [many flags](https://github.com/Y2Z/monol
 2. Config option to list archived pages on project page.
 
 3. Use issue labels to categorize archived page
+
+4. Config option to auto-archive to wayback machine
