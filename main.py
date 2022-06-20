@@ -1,7 +1,7 @@
 import os, sys, json
 print('Arguments:',sys.argv)
 
-fullurl = sys.argv[1]
+fullurl = sys.argv[1].strip()
 url = fullurl.split('::')[0]
 if url[-1] == '/': url = url[:-1]
 
@@ -17,13 +17,13 @@ print('Monolith Default Flags:',default_flags)
 allowed_users = config['allowed_users'].append(owner)
 print('Allowed Users:',allowed_users)
 
-if commenter in allowed_users:
+if commenter in allowed_users and ' ' not in url and (url[:7] == 'http://' or url[:8] == 'https://'):
   if url[-5:] != '.html': fname = 'html/' + url.replace('/', '_-_') + '.html'
   else: fname = 'html/' + url.replace('http://','').replace('https://','').replace('/', '_-_')
 
-  if '::' in fullurl and fullurl.split('::')[1] != '': monolith_command = f'chmod +x monolith && ./monolith {fullurl.split("::")[1]} {url} -o {fname}'
+  if '::' in fullurl and fullurl.split('::')[1] != '': monolith_command = f'chmod +x monolith && ./monolith -{fullurl.split("::")[1]} {url} -o {fname}'
   elif '::' in fullurl: monolith_command = f'chmod +x monolith && ./monolith {url} -o {fname}'
-  else: monolith_command = f'chmod +x monolith && ./monolith -ifave {url} -o {fname}'
+  else: monolith_command = f'chmod +x monolith && ./monolith -{default_flags} {url} -o {fname}'
 
   print('Executing:',monolith_command)
   monolith = os.popen(monolith_command).read()
