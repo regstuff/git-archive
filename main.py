@@ -14,7 +14,7 @@ with open('config.json') as json_file: config = json.load(json_file)
 default_flags = config['default_flags']
 print('Monolith Default Flags:',default_flags)
 
-if url[-5:] == '.html': fname = 'html/' + url.replace('/', '_-_') + '.html'
+if url[-5:] != '.html': fname = 'html/' + url.replace('/', '_-_') + '.html'
 else: fname = 'html/' + url.replace('/', '_-_')
 
 if '::' in fullurl and fullurl.split('::')[1] != '': monolith_command = f'chmod +x monolith && ./monolith {fullurl.split("::")[1]} {url} -o {fname}'
