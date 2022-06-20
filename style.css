@@ -1,5 +1,5 @@
 html { color: #FAFAFA; background: #1F1F1F !important; }
 body { background-color: #1F1F1F; background-image: none !important; }
-h3 { text-align: center; margin: 40px 20px 20px 40px; }
-h1 { text-align: center; margin: 40px 20px 20px 40px; }
+h3 { text-align: center; margin: 40px 20px 20px 40px; font-style: normal}
+h2 { text-align: center; margin: 40px 20px 20px 40px; color:#a9e3ff; font-style: normal}
 .responseMessage { text-align: center; }
