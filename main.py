@@ -3,6 +3,7 @@ print('Arguments:',sys.argv)
 
 fullurl = sys.argv[1]
 url = fullurl.split('::')[0]
+if url[-1] == '/': url = url[:-1]
 
 commenter = sys.argv[2]
 print('Commenter:',commenter)
