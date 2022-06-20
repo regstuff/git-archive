@@ -1,4 +1,4 @@
 {
   "default_flags": "ifave",
-  "allowed_users": ['1octocat1']
+  "allowed_users": ["1octocat1"]
 }
