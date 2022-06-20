@@ -1,4 +1,5 @@
 import os, sys
+print('Arguments:',sys.argv)
 fullurl = sys.argv[1]
 url = fullurl.split('::')[0]
 commenter = sys.argv[2]
