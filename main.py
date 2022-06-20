@@ -14,9 +14,8 @@ print('Owner:',owner)
 with open('config.json') as json_file: config = json.load(json_file)
 default_flags = config['default_flags']
 print('Monolith Default Flags:',default_flags)
-print('Config allowed user:', config['allowed_users'])
 config['allowed_users'].append(owner)
-print('Allowed Users:',allowed_users)
+print('Config allowed user:', config['allowed_users'])
 
 if commenter in config['allowed_users'] and ' ' not in url and (url[:7] == 'http://' or url[:8] == 'https://'):
   if url[-5:] != '.html': fname = 'html/' + url.replace('/', '_-_') + '.html'
