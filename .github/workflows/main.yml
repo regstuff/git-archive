@@ -36,7 +36,7 @@ jobs:
         run: python main.py $TITLE $AUTHOR $OWNER
         env: 
           TITLE: ${{ github.event.issue.title }}
-          AUTHOR: ${{ github.event.issue.author }}
+          AUTHOR: ${{ github.event.issue.user.login }}
           OWNER: ${{ github.repository_owner }}
       
       - name: Push Changes Back To Repo
