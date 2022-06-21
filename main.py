@@ -1,4 +1,6 @@
 import os, sys, json, requests
+from requests.structures import CaseInsensitiveDict
+
 print('Arguments:',sys.argv)
 
 fullurl = sys.argv[1].strip()
@@ -35,6 +37,7 @@ if creator in config['allowed_users'] and ' ' not in url and (url[:7] == 'http:/
     url = "https://web.archive.org/save"
     
     # Documentation at https://docs.google.com/document/d/1Nsv52MvSjbLb2PCpHlat0gkzw0EvtSgpKHu4mk0MnrA/ & backup at https://gist.github.com/regstuff/82e690db2f1d91ba59f6681c1abad6cf
+    headers = CaseInsensitiveDict()
     headers["Accept"] = "application/json"
     headers["Authorization"] = f"LOW {os.environment['WBACCESS']}:{os.environment['WBSECRET']}" # Generate your keys at https://archive.org/account/s3.php - you need to be logged into archive.org
     headers["Content-Type"] = "application/x-www-form-urlencoded"
