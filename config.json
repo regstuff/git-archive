@@ -1,4 +1,5 @@
 {
   "default_flags": "ifave",
-  "allowed_users": []
+  "allowed_users": [],
+  "wayback_archive": "yes"
 }
