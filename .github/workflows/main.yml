@@ -38,6 +38,8 @@ jobs:
           TITLE: ${{ github.event.issue.title }}
           AUTHOR: ${{ github.event.issue.user.login }}
           OWNER: ${{ github.repository_owner }}
+          WBSECRET: ${{ secrets.WAYBACK_S3_SECRET }}
+          WBACCESS: ${{ secrets.WAYBACK_S3_ACCESS }}
       
       - name: Push Changes Back To Repo
         uses: GuillaumeFalourd/git-commit-push@v1.3
