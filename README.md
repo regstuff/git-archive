@@ -40,7 +40,7 @@ Most browsers allow you to [add a custom search engine](https://support.google.c
 
 **Collaborative Archiving:** By default, only issues created by the repo owner trigger the archiving workflow. To add additional users, add to the allowed_users list in config.json. Eg. ["someone", "someone-else"]
 
-**Archive to Wayback Machine:** Set the 'wayback_archive' flag to 'yes' or 'no'. You'll need to create an account at archive.org and generate your keys at https://archive.org/account/s3.php Then [add them](https://github.com/regstuff/git-archive/settings/secrets/actions/new) as repository secrets named WAYBACK_S3_ACCESS & WAYBACK_S3_SECRET 
+**Archive to Wayback Machine:** Set the 'wayback_archive' flag to 'yes'. You'll need to [create an account](https://archive.org/account/signup) at archive.org and generate your keys at https://archive.org/account/s3.php Then [add them](https://github.com/regstuff/git-archive/settings/secrets/actions/new) as repository secrets named WAYBACK_S3_ACCESS & WAYBACK_S3_SECRET 
 
 ## Security
 1. If you're using the browser method, make sure no one sees your access token. To limit the damage in such situations, make sure you restrict the personal access token's scopes to repo (preferably public repo), when creating the token.
