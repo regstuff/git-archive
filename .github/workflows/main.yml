@@ -20,17 +20,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repository
-        uses: actions/checkout@v3
-      
-      - name: Setup Python Version
-        uses: actions/setup-python@v3
-        with:
-          python-version: 3.8 # Install the python version needed
-      
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       
       - name: Run specific commands # Another step name
         run: |
@@ -43,14 +33,12 @@ jobs:
           TITLE: ${{ github.event.issue.title }}
           AUTHOR: ${{ github.event.issue.user.login }}
           OWNER: ${{ github.repository_owner }}
-          WBSECRET: ${{ secrets.WAYBACK_S3_SECRET }}
-          WBACCESS: ${{ secrets.WAYBACK_S3_ACCESS }}
       
       - name: Push Changes Back To Repo
-        uses: GuillaumeFalourd/git-commit-push@v1.3
+        uses: GuillaumeFalourd/git-commit-push@0363e474c79afd69c7e295d331183c0c1d824619
         
       - name: Close Issue
-        uses: peter-evans/close-issue@v2
+        uses: peter-evans/close-issue@6b9ae90f02cf2148a36e31c2bb80166031f14ada
         with:
           issue-number: ${{ github.event.issue.number }}
           comment: Archived. Closing issue
